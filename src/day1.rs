@@ -3,7 +3,7 @@ use std::fs;
 pub fn init(file_path: &String) {
     let contents = fs::read_to_string(file_path).expect("Should have been able to read the file");
 
-    let sentences = contents.split("\n");
+    let sentences = contents.lines();
 
     let sum: i32 = sentences
         .into_iter()

@@ -4,7 +4,7 @@ use std::fs;
 pub fn init(file_path: &String) {
     let contents = fs::read_to_string(file_path).expect("Should have been able to read the file");
 
-    let games = contents.split("\n");
+    let games = contents.lines();
 
     let sum: i32 = games
         .into_iter()
